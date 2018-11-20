@@ -1,0 +1,10 @@
+.title {
+    font-size: 18px;
+}
+
+.icon {
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+}

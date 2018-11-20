@@ -1,0 +1,14 @@
+.idea/
+node_modules/
+
+11/
+
+public/assets/
+
+test/
+
+\.idea/
+
+_BCKPS/
+
+now\.json

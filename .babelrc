@@ -1,0 +1,11 @@
+{
+  "ignore": ["node_modules/**", "react/dst/**"],
+  "presets": ["env", "react"],
+  "plugins": [
+    ["transform-decorators-legacy"],
+    ["transform-class-properties", { "spec": "true" }],
+    ["react-html-attrs"],
+    ["remove-comments"],
+    ["transform-object-rest-spread"]
+  ]
+}
