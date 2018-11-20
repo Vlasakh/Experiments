@@ -34,6 +34,7 @@ router.get('/', (req, res) =>
 router.get('/:id', (req, res) =>
 {
     const path = `public/${req.params.id}`;
+console.log('path',path);// eslint-disable-line indent, object-curly-spacing,comma-spacing
 
     fs.readFile(path, (err, data) =>
     {

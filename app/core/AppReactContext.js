@@ -1,3 +1,4 @@
+// @flow
 import { createContext } from 'react';
 
 import Context from 'Core/Context';

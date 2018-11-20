@@ -1,0 +1,32 @@
+@import '../../../../src/styles/vars.css';
+
+$drawerWidth: 240px;
+$persistentDrawerBg: #fafafa;
+
+:global body {
+    margin: 0;
+    background: $persistentDrawerBg;
+}
+
+.pageSet {
+    position: relative;
+    flex-grow: 1;
+
+    .tabsBar {
+        box-shadow: none;
+    }
+
+    .tabs {
+        border-bottom: 1px solid var(--color-gray);
+    }
+
+    .tabsContent {
+        padding: 20px;
+    }
+}
+
+.wordsCount {
+    position: absolute;
+    top: 58px;
+    right: 6px;
+}

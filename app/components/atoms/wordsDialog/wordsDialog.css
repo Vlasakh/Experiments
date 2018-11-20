@@ -1,0 +1,20 @@
+$wordHeight: 24px;
+
+.wrapper {
+    .revertButton {
+        position: absolute;
+        margin: -3px 0 0 -50px;
+        width: 24px;
+        height: $wordHeight;
+        color: color(lightgray a(50%));
+
+        &:hover {
+            color: var(--color-default-font);
+        }
+    }
+}
+
+.li {
+    position: relative;
+    min-height: $wordHeight;
+}

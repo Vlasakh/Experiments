@@ -7,6 +7,9 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackAutoInject = require('webpack-auto-inject-version');
 
+// const postcssConfig = require('./webpackinc/postcss.config.js'); todo: вынести конфиги отдельно
+
+// const sourceMap = !process.env.SOURCE_MAP ? 'source-map' : 'cheap-module-eval-source-map';
 const sourceMap = process.env.SOURCE_MAP ? 'source-map' : 'eval';
 
 const extractSass = new ExtractTextPlugin({
@@ -20,9 +23,9 @@ module.exports = {
         bundlev: [
             'react',
             'react-dom',
-            'react-redux',
-            'redux',
-            'react-router',
+            // 'react-redux', todo: разбить на чанки
+            // 'redux',
+            // 'react-router',
         ],
     },
     output: {
@@ -48,12 +51,12 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules([\\/]*jss*|!?[\\/]css-vendor*|!?[\\/]react-swipe-component*|!?[\\/]react-virtualized*)/,
+                exclude: /node_modules([\\/]*jss*|!?[\\/]css-vendor*|!?[\\/]react-swipe-component*)/,
                 loader: 'babel-loader',
             },
             {
                 test: /\.jsx$/,
-                exclude: /node_modules([\\/]*jss*|!?[\\/]css-vendor*|!?[\\/]react-swipe-component*|!?[\\/]react-virtualized*)/,
+                exclude: /node_modules([\\/]*jss*|!?[\\/]css-vendor*|!?[\\/]react-swipe-component*)/,
                 loader: 'babel-loader',
             },
             {
@@ -91,12 +94,15 @@ module.exports = {
                             modules: true,
                             minimize: true,
                             sourceMap: true,
+                            // localIdentName: '[name]__[local]'
                             localIdentName: '[local]_[hash:base64:4]',
                         },
                     },
                     {
                         loader: require.resolve('postcss-loader'),
                         options: {
+                            // Necessary for external CSS imports to work
+                            // https://github.com/facebookincubator/create-react-app/issues/2677
                             ident: 'postcss',
                             plugins: () => [
                                 require('postcss-flexbugs-fixes'),

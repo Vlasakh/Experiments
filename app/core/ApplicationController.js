@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
@@ -5,26 +6,30 @@ import { HashRouter } from 'react-router-dom';
 
 import AppReactContext from 'App/core/AppReactContext';
 import AppContainer from 'Containers/AppContainer.jsx';
-import LocalStorageDataLoader from './LocalStorageDataLoader';
-import AssetsUpdater from './AssetsUpdater';
+import SetsDataLoader from 'Core/SetsDataLoader';
+import parseUrl from 'Actions/parseUrl';
 
+import type Context from 'Core/Context';
 
 class ApplicationController
 {
-    context;
+    context: Context;
 
-    constructor(context)
+    constructor(context: Context)
     {
         this.context = context;
     }
 
     initialize()
     {
-        (new LocalStorageDataLoader(this.context)).run();
-        (new AssetsUpdater(this.context)).run();
+        this.context.executeAction(parseUrl);
+
+        const DataLoader = new SetsDataLoader(this.context.store);
+
+        DataLoader.run();
     }
 
-    render(rootElement)
+    render(rootElement: Element)
     {
         if (rootElement !== null)
         {

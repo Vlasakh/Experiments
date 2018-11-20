@@ -1,0 +1,14 @@
+@custom-media --mobile (min-width: 768px);
+
+:root {
+    --color-default-font: rgba(0, 0, 0, .87);
+    --color-gray-light: lightgray;
+    --color-gray: gray;
+    --color-gray-hover: #dedede;
+    --color-card-actions: rgba(77, 184, 210, .28);
+    --color-card-actions-hover: rgba(77, 184, 210, 1);
+
+    /* --nested-variable: color(var(--color-danger) a(90%)); для такого нужен плагин */
+
+    /* --tablets: (min-width: 600px); */
+}

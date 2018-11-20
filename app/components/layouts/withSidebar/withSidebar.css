@@ -1,0 +1,65 @@
+@import '../../../../src/styles/vars.css';
+
+$drawerWidth: 240px;
+$persistentDrawerBg: #fafafa;
+
+:global body {
+    margin: 0;
+    background: $persistentDrawerBg;
+}
+
+.wrapper {
+    position: relative;
+    flex-grow: 1;
+
+    .appFrame {
+        position: relative;
+        display: flex;
+        z-index: 1;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .appBar {
+        position: absolute;
+    }
+
+    .appBarShift {
+        width: calc(100% - $drawerWidth);
+    }
+
+    .appBarShift-left {
+        margin-left: $drawerWidth;
+    }
+
+    .appBarShift-right {
+        margin-right: $drawerWidth;
+    }
+
+    .menuButton {
+        margin-right: 20px;
+        margin-left: 12px;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .drawerPaper {
+        position: relative;
+    }
+
+    .drawerHeader {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 8px;
+    }
+}
+
+.titleComment {
+    /* vtodo: отцентрировать по вертикали https://i.imgur.com/GxC6kUA.png */
+    font-size: 13px;
+    font-style: italic;
+}

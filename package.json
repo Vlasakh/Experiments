@@ -1,6 +1,6 @@
 {
-    "name": "Currencies_n_stocks",
-    "version": "1.0.17",
+    "name": "Experiments",
+    "version": "1.0.1",
     "dependencies": {
         "@material-ui/core": "3.3.2",
         "@material-ui/icons": "3.0.1",
@@ -38,7 +38,6 @@
         "react-router-dom": "4.3.1",
         "react-swipe-component": "^2.1.0",
         "react-swipeable-views": "^0.12.14",
-        "react-virtualized": "^9.21.0",
         "redux": "^3.7.2",
         "redux-devtools-extension": "^2.13.5",
         "redux-thunk": "^2.2.0",
@@ -54,7 +53,7 @@
         "lint": "eslint app src server sets --ext .js,.jsx",
         "start": "npm run start:server",
         "start:server": "node server/server.js start",
-        "start:client": "node node_modules/webpack/bin/webpack.js --watch --watch-aggregate-timeout 300 --env.patch",
+        "start:client": "webpack --watch --watch-aggregate-timeout 300 --env.patch",
         "test": "node scripts/customized-config test --env=jsdom",
         "flow": "flow"
     },

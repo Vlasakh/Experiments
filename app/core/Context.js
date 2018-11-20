@@ -1,20 +1,29 @@
+// @flow
+import type { Store } from 'redux';
+import type { ContextRouter } from 'react-router-dom';
+
+import type { ActionProto } from 'Types/common';
+import type { Match } from 'Stores/ApplicationStore.flow';
+
 class Context
 {
-    store;
-    history;
-    match;
+    store: Store;
+    history: ContextRouter.history;
+    match: Match;
 
-    setStore(inStore)
+    setStore(inStore: Store)
     {
         this.store = inStore;
     }
 
-    setHistory(history)
+    setHistory(history: ContextRouter.history)
     {
         this.history = history;
     }
 
-    executeAction(action, payload)
+    // eslint-disable-next-line flowtype/no-weak-types
+    // executeAction(action: Function, payload: mixed): Promise<any>
+    executeAction<T, R>(action: ActionProto<T, R>, payload: T): Promise<R>
     {
         const { dispatch, getState } = this.store;
 

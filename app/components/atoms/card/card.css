@@ -1,0 +1,51 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+    height: 95%;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 7px;
+    }
+
+    .cardContent {
+        display: flex;
+        justify-content: center;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .cardActionsTop {
+        justify-content: space-between;
+    }
+
+    .cardActionsBottom {
+        justify-content: flex-end;
+        height: 48px;
+    }
+
+    .cardActionsButton {
+        color: var(--color-card-actions);
+        font-size: 11px;
+        text-transform: lowercase;
+    }
+
+    .cardActionsButton:hover {
+        color: var(--color-card-actions-hover);
+    }
+
+    .listBtnWrapper {
+        position: relative;
+    }
+
+    .listBtn {
+        position: absolute;
+        top: -24px;
+        right: -16px;
+        border-radius: 7px;
+    }
+}
+

@@ -1,0 +1,64 @@
+@import '../../../../src/styles/vars.css';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .row {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .card {
+        position: relative;
+        z-index: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .blockBottom {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .nextPrevWrapper {
+        position: relative;
+        z-index: 1;
+    }
+
+    .nextPrevBtn {
+        position: absolute;
+        display: block;
+        height: 100%;
+        border-radius: 2px;
+    }
+
+    .prevBtn {
+        left: -10px;
+
+        @media (--mobile) {
+            left: 0;
+        }
+    }
+
+    .nextBtn {
+        right: -10px;
+
+        @media (--mobile) {
+            right: 0;
+        }
+    }
+
+    .activeCard {
+        transform: translateY(-100px);
+        opacity: .1;
+        transition: all .3s ease-out;
+    }
+
+    .successMessage {
+        text-align: center;
+    }
+}

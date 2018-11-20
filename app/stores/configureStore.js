@@ -1,6 +1,10 @@
+// @flow
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+
+import type Context from 'Core/Context';
+import type { SetsStore } from 'Types/SetsStore.flow';
 
 import rootReducer from './index';
 
@@ -9,7 +13,7 @@ const composeEnhancers = composeWithDevTools({
     // Specify custom devTools options
 });
 
-export default function configureStore(initialState, context)
+export default function configureStore(initialState?: SetsStore | {} = {}, context: Context)
 {
     const store = createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(thunk.withExtraArgument(context))));
 
